@@ -254,130 +254,7 @@
             width: 100%;
         }
         
-        /* PPT Slide Sections */
-        .ppt-slide {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .slide-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: 1;
-        }
-        
-        .slide-background::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 25, 47, 0.85);
-        }
-        
-        .slide-content {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-        
-        .slide-title {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        
-        .slide-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .slide-image {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
-        }
-        
-        .slide-image:hover {
-            transform: scale(1.02);
-        }
-        
-        .insights-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .insights-list li {
-            margin-bottom: 15px;
-            padding-left: 25px;
-            position: relative;
-            color: var(--light);
-            line-height: 1.6;
-            font-size: 1.1rem;
-        }
-        
-        .insights-list li::before {
-            content: '▸';
-            color: var(--secondary);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        
-        /* Skills Slides */
-        .skills-slide {
-            background: var(--dark);
-        }
-        
-        .samples-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .sample-item {
-            background: var(--card-bg);
-            border: 2px solid rgba(100, 255, 218, 0.3);
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .sample-item:hover {
-            transform: translateY(-5px);
-            border-color: var(--secondary);
-            box-shadow: 0 10px 25px rgba(100, 255, 218, 0.2);
-        }
-        
-        .sample-item img {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-        
-        /* Regular Sections */
+        /* Sections */
         .section {
             padding: 100px 0;
             position: relative;
@@ -416,6 +293,108 @@
             bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 30px auto 0;
+            color: var(--light);
+            opacity: 0.8;
+        }
+        
+        /* Project Sections */
+        .project-section {
+            background-color: var(--dark);
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px;
+            border: 2px solid rgba(100, 255, 218, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .project-image:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.2);
+        }
+        
+        .insights-list {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .insights-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--light);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .insights-list li::before {
+            content: '▸';
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Skills Sections */
+        .skills-section {
+            background-color: var(--dark);
+        }
+        
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-top: 2px solid var(--secondary);
+        }
+        
+        .skill-category h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+        }
+        
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-item {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: var(--secondary);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(100, 255, 218, 0.2);
         }
         
         /* Education Section */
@@ -504,48 +483,6 @@
             margin-bottom: 10px;
         }
         
-        /* Skills Section */
-        .skills-section {
-            background-color: var(--dark);
-        }
-        
-        .skills-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .skill-category {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border-top: 2px solid var(--secondary);
-        }
-        
-        .skill-category h3 {
-            color: var(--secondary);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(100, 255, 218, 0.2);
-        }
-        
-        .skill-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .skill-item {
-            background-color: rgba(100, 255, 218, 0.1);
-            color: var(--secondary);
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid rgba(100, 255, 218, 0.2);
-        }
-        
         /* Contact Section */
         .contact-section {
             background-color: var(--dark);
@@ -616,18 +553,17 @@
         
         /* Responsive */
         @media (max-width: 768px) {
-            .slide-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            
-            .slide-title {
-                font-size: 2.5rem;
-            }
-            
             .profile-container {
                 flex-direction: column;
                 text-align: center;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-image {
+                height: 250px;
             }
             
             .nav-container {
@@ -658,7 +594,7 @@
                     </div>
                     <p>A curious polymath with passions ranging from technology to fitness, martial arts, and creative editing like Photoshop, I enjoy learning across disciplines and applying knowledge in unique ways. I have completed the Google Cybersecurity Professional Certificate and am currently pursuing Google IT Automation with Python and Cisco IT Essentials 1 & 2. With 2 years of experience as a Digital Content Associate at Amazon Kindle Operations, I specialize in automation, quality assurance, data-driven problem solving, and exploring AI applications.</p>
                     <div class="header-buttons">
-                        <a href="#nykaa-slide" class="btn">View My Projects</a>
+                        <a href="#excel-analytics" class="btn">View My Work</a>
                         <a href="M.Niyaz_Resume.pdf" class="btn btn-outline">Download Resume</a>
                     </div>
                 </div>
@@ -672,159 +608,154 @@
             <a href="#" class="logo">Mohammed Niyaz.M</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#nykaa-slide">Nykaa</a></li>
-                <li><a href="#netflix-slide">Netflix</a></li>
-                <li><a href="#retail-slide">Retail</a></li>
-                <li><a href="#excel-slide">Excel</a></li>
-                <li><a href="#sql-slide">SQL</a></li>
+                <li><a href="#excel-analytics">Excel</a></li>
+                <li><a href="#sql-analysis">SQL</a></li>
+                <li><a href="#netflix-dashboard">Netflix</a></li>
+                <li><a href="#retail-dashboard">Retail</a></li>
+                <li><a href="#nykaa-dashboard">Nykaa</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Nykaa Slide -->
-    <section id="nykaa-slide" class="ppt-slide">
-        <div class="slide-background" style="background-image: url('Nyk_main.jpg');"></div>
-        <div class="slide-content">
-            <h2 class="slide-title">💄 Nykaa E-Commerce Analysis</h2>
-            <div class="slide-grid">
-                <div>
-                    <img src="Nyka1.jpg" alt="Nykaa Analysis 1" class="slide-image">
-                    <img src="Nyka2.jpg" alt="Nykaa Analysis 2" class="slide-image" style="margin-top: 20px;">
-                </div>
-                <div>
-                    <ul class="insights-list">
-                        <li>Analyzed sales performance across beauty categories, identifying top-performing brands and seasonal trends</li>
-                        <li>Tracked customer behavior patterns to optimize marketing strategies and improve conversion rates</li>
-                        <li>Monitored inventory turnover rates to streamline supply chain and reduce operational costs</li>
-                        <li>Identified regional sales hotspots to guide targeted marketing campaigns</li>
-                        <li>Developed customer segmentation models for personalized marketing approaches</li>
-                        <li>Optimized pricing strategies based on competitor analysis and market demand</li>
-                    </ul>
-                </div>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
             </div>
-        </div>
-    </section>
-
-    <!-- Netflix Slide -->
-    <section id="netflix-slide" class="ppt-slide">
-        <div class="slide-background" style="background-image: url('Nt_DB.jpg');"></div>
-        <div class="slide-content">
-            <h2 class="slide-title">🎬 Netflix Content Analytics</h2>
-            <div class="slide-grid">
-                <div>
-                    <img src="Netflix_SQL.jpg" alt="Netflix SQL Analysis" class="slide-image">
-                    <img src="Netflix_SQL1.jpg" alt="Netflix SQL Analysis 2" class="slide-image" style="margin-top: 20px;">
-                </div>
-                <div>
-                    <ul class="insights-list">
-                        <li>Analyzed viewer demographics and preferences to identify content engagement patterns</li>
-                        <li>Identified peak viewing periods and content consumption trends to optimize release schedules</li>
-                        <li>Evaluated genre performance and rating correlations to understand subscriber preferences</li>
-                        <li>Provided data-driven insights for content acquisition and original programming decisions</li>
-                        <li>Tracked subscriber retention rates and churn patterns across different regions</li>
-                        <li>Developed content recommendation algorithms based on viewing history analysis</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Online Retail Slide -->
-    <section id="retail-slide" class="ppt-slide">
-        <div class="slide-background" style="background-image: url('OR_DB.jpg');"></div>
-        <div class="slide-content">
-            <h2 class="slide-title">🛒 Online Retail Sales Analytics</h2>
-            <div class="slide-grid">
-                <div>
-                    <img src="Retailsales_mysql.jpg" alt="Retail Sales SQL" class="slide-image">
-                    <img src="Retailsales1_mysql.jpg" alt="Retail Sales SQL 2" class="slide-image" style="margin-top: 20px;">
-                </div>
-                <div>
-                    <ul class="insights-list">
-                        <li>Identified top-selling product categories and customer segments driving 80% of revenue</li>
-                        <li>Analyzed seasonal sales patterns and customer purchasing behavior to forecast demand</li>
-                        <li>Tracked key performance indicators including customer lifetime value and retention rates</li>
-                        <li>Visualized sales funnel metrics to identify drop-off points and optimize conversions</li>
-                        <li>Implemented A/B testing for website optimization and user experience improvements</li>
-                        <li>Developed inventory management strategies based on sales velocity and seasonality</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Excel Analytics Slide -->
-    <section id="excel-slide" class="ppt-slide skills-slide">
-        <div class="slide-content">
-            <h2 class="slide-title">📈 Excel Analytics</h2>
-            <div class="slide-grid">
-                <div>
-                    <img src="Pivot table.jpg" alt="Excel Pivot Table" class="slide-image">
-                    <div class="samples-grid">
-                        <div class="sample-item">
-                            <img src="EDA_excel1.jpg" alt="Excel EDA">
-                            <p>Exploratory Data Analysis</p>
-                        </div>
-                        <div class="sample-item">
-                            <img src="Excel_EDA.jpg" alt="Excel Analysis">
-                            <p>Data Visualization</p>
-                        </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="professional-card">
+                        <h3>Analyst</h3>
+                        <p>As an ambitious 23-year-old, my professional journey began at Amazon Kindle, where I managed the overall marketplace for e-books, handling the requirements of authors, customers, and stakeholders. I maintained high standards for productivity, quality, and speed without compromise. Looking forward, my focus is on expanding my skills in cybersecurity and IT automation to grow with the digital world as it continues to expand.</p>
                     </div>
                 </div>
-                <div>
-                    <ul class="insights-list">
-                        <li>Advanced data cleaning and preparation using Power Query and data transformation tools</li>
-                        <li>Exploratory Data Analysis (EDA) with statistical functions, conditional formatting, and data validation</li>
-                        <li>Dynamic reporting with Pivot Tables, Pivot Charts, and advanced filtering for business intelligence</li>
-                        <li>Data visualization and interactive dashboard creation for stakeholder presentations and decision-making</li>
-                        <li>Automated reporting processes using macros and VBA scripting to improve efficiency</li>
-                        <li>Complex formula creation including INDEX-MATCH, array formulas, and advanced lookup functions</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- SQL Analysis Slide -->
-    <section id="sql-slide" class="ppt-slide skills-slide">
-        <div class="slide-content">
-            <h2 class="slide-title">🗃️ SQL Database Analysis</h2>
-            <div class="slide-grid">
-                <div>
-                    <div class="samples-grid">
-                        <div class="sample-item">
-                            <img src="Retailsales_mysql.jpg" alt="Retail SQL">
-                            <p>Sales Analysis</p>
-                        </div>
-                        <div class="sample-item">
-                            <img src="Retailsales1_mysql.jpg" alt="Retail SQL 2">
-                            <p>Revenue Analytics</p>
-                        </div>
-                        <div class="sample-item">
-                            <img src="Netflix_SQL.jpg" alt="Netflix SQL">
-                            <p>Content Analysis</p>
-                        </div>
-                        <div class="sample-item">
-                            <img src="Netflix_SQL1.jpg" alt="Netflix SQL 2">
-                            <p>Viewer Analytics</p>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <ul class="insights-list">
-                        <li>Complex query writing with multiple JOIN operations across relational databases including MySQL and PostgreSQL</li>
-                        <li>Data aggregation and analytical functions for comprehensive business reporting and KPI tracking</li>
-                        <li>Subqueries and Common Table Expressions (CTEs) for advanced data manipulation and complex calculations</li>
-                        <li>Performance optimization techniques and efficient data extraction strategies for large datasets</li>
-                        <li>Database design and normalization principles for optimal data structure and query performance</li>
-                        <li>Stored procedures and function creation for automated reporting and data processing workflows</li>
-                    </ul>
-                </div>
+    <!-- Excel Analytics Section -->
+    <section id="excel-analytics" class="section project-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>📈 Excel Analytics</h2>
+                <p>Advanced data analysis and visualization using Microsoft Excel</p>
             </div>
+            
+            <div class="image-gallery">
+                <img src="Pivot table.jpg" alt="Excel Pivot Table Analysis" class="project-image">
+                <img src="EDA_excel1.jpg" alt="Excel Exploratory Data Analysis" class="project-image">
+                <img src="Excel_EDA.jpg" alt="Excel Data Visualization" class="project-image">
+            </div>
+            
+            <ul class="insights-list">
+                <li>Advanced data cleaning and preparation using Power Query and data transformation tools</li>
+                <li>Exploratory Data Analysis (EDA) with statistical functions and conditional formatting</li>
+                <li>Dynamic reporting with Pivot Tables and Pivot Charts for business intelligence</li>
+                <li>Data visualization and dashboard creation for stakeholder presentations</li>
+                <li>Automated reporting processes using macros and VBA scripting</li>
+                <li>Complex formula creation including INDEX-MATCH and advanced lookup functions</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SQL Analysis Section -->
+    <section id="sql-analysis" class="section project-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>🗃️ SQL Database Analysis</h2>
+                <p>Data extraction, manipulation, and analysis using SQL</p>
+            </div>
+            
+            <div class="image-gallery">
+                <img src="Retailsales_mysql.jpg" alt="Retail Sales SQL Analysis" class="project-image">
+                <img src="Retailsales1_mysql.jpg" alt="Retail Sales SQL Analysis 2" class="project-image">
+                <img src="Netflix_SQL1.jpg" alt="Netflix SQL Analysis" class="project-image">
+                <img src="Netflix_SQL.jpg" alt="Netflix SQL Analysis 2" class="project-image">
+            </div>
+            
+            <ul class="insights-list">
+                <li>Complex query writing with multiple JOIN operations across relational databases</li>
+                <li>Data aggregation and analytical functions for business reporting</li>
+                <li>Subqueries and Common Table Expressions (CTEs) for advanced data manipulation</li>
+                <li>Performance optimization and data extraction for large datasets</li>
+                <li>Database design and normalization principles</li>
+                <li>Stored procedures and function creation for automated reporting</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Netflix Dashboard Section -->
+    <section id="netflix-dashboard" class="section project-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>🎬 Netflix Content Analytics</h2>
+                <p>Content performance analysis and viewer insights</p>
+            </div>
+            
+            <div class="image-gallery">
+                <img src="Nt_DB.jpg" alt="Netflix Dashboard Analysis" class="project-image">
+            </div>
+            
+            <ul class="insights-list">
+                <li>Analyzed viewer demographics and preferences to identify content engagement patterns</li>
+                <li>Identified peak viewing periods and content consumption trends to optimize release schedules</li>
+                <li>Evaluated genre performance and rating correlations to understand subscriber preferences</li>
+                <li>Provided data-driven insights for content acquisition and original programming decisions</li>
+                <li>Tracked subscriber retention rates and churn patterns across different regions</li>
+                <li>Developed content recommendation algorithms based on viewing history analysis</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Retail Dashboard Section -->
+    <section id="retail-dashboard" class="section project-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>🛒 Online Retail Sales Analytics</h2>
+                <p>Sales performance and customer behavior analysis</p>
+            </div>
+            
+            <div class="image-gallery">
+                <img src="OR_DB.jpg" alt="Online Retail Dashboard" class="project-image">
+            </div>
+            
+            <ul class="insights-list">
+                <li>Identified top-selling product categories and customer segments driving 80% of revenue</li>
+                <li>Analyzed seasonal sales patterns and customer purchasing behavior to forecast demand</li>
+                <li>Tracked key performance indicators including customer lifetime value and retention rates</li>
+                <li>Visualized sales funnel metrics to identify drop-off points and optimize conversions</li>
+                <li>Implemented A/B testing for website optimization and user experience improvements</li>
+                <li>Developed inventory management strategies based on sales velocity and seasonality</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Nykaa Dashboard Section (LAST) -->
+    <section id="nykaa-dashboard" class="section project-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>💄 Nykaa E-Commerce Analysis</h2>
+                <p>Beauty and fashion e-commerce analytics</p>
+            </div>
+            
+            <div class="image-gallery">
+                <img src="Nyk_main.jpg" alt="Nykaa Main Dashboard" class="project-image">
+                <img src="Nyka2.jpg" alt="Nykaa Analysis 2" class="project-image">
+                <img src="Nyka1.jpg" alt="Nykaa Analysis 1" class="project-image">
+            </div>
+            
+            <ul class="insights-list">
+                <li>Analyzed sales performance across beauty categories, identifying top-performing brands and seasonal trends</li>
+                <li>Tracked customer behavior patterns to optimize marketing strategies and improve conversion rates</li>
+                <li>Monitored inventory turnover rates to streamline supply chain and reduce operational costs</li>
+                <li>Identified regional sales hotspots to guide targeted marketing campaigns</li>
+                <li>Developed customer segmentation models for personalized marketing approaches</li>
+                <li>Optimized pricing strategies based on competitor analysis and market demand</li>
+            </ul>
         </div>
     </section>
 
@@ -914,18 +845,6 @@
                         <span class="skill-item">Quality Assurance</span>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Certifications</h2>
-            </div>
-            <div style="text-align: center;">
-                <p>Google Cybersecurity Professional Certificate | Business Analytics & Digital Marketing - GUVI | Generative AI Certification - GUVI | Six Sigma White Belt</p>
             </div>
         </div>
     </section>
