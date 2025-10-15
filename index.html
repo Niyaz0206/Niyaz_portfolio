@@ -324,15 +324,24 @@
         }
         
         .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
             margin-bottom: 50px;
+            align-items: center;
+        }
+        
+        .project-image-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
         }
         
         .project-image {
-            width: 100%;
-            height: 350px;
+            width: auto;
+            max-width: 100%;
+            height: auto;
+            max-height: 500px;
             object-fit: contain;
             background-color: var(--card-bg);
             border-radius: 8px;
@@ -573,12 +582,8 @@
                 text-align: center;
             }
             
-            .image-gallery {
-                grid-template-columns: 1fr;
-            }
-            
             .project-image {
-                height: 280px;
+                max-height: 400px;
             }
             
             .nav-container {
@@ -592,6 +597,36 @@
             
             .nav-links li {
                 margin: 0 15px;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .project-image {
+                max-height: 300px;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -665,7 +700,9 @@
             </div>
             
             <div class="image-gallery">
-                <img src="Nt_DB.jpg" alt="Netflix Analytics Dashboard" class="project-image">
+                <div class="project-image-container">
+                    <img src="Nt_DB.jpg" alt="Netflix Analytics Dashboard" class="project-image">
+                </div>
             </div>
             
             <ul class="insights-list">
@@ -688,7 +725,9 @@
             </div>
             
             <div class="image-gallery">
-                <img src="OR_DB.jpg" alt="Online Retail Sales Dashboard" class="project-image">
+                <div class="project-image-container">
+                    <img src="OR_DB.jpg" alt="Online Retail Sales Dashboard" class="project-image">
+                </div>
             </div>
             
             <ul class="insights-list">
@@ -711,9 +750,15 @@
             </div>
             
             <div class="image-gallery">
-                <img src="Pivot table.jpg" alt="Excel Pivot Table Analysis" class="project-image">
-                <img src="EDA_excel1.jpg" alt="Excel Exploratory Data Analysis" class="project-image">
-                <img src="Excel_EDA.jpg" alt="Excel Data Visualization" class="project-image">
+                <div class="project-image-container">
+                    <img src="Pivot table.jpg" alt="Excel Pivot Table Analysis" class="project-image">
+                </div>
+                <div class="project-image-container">
+                    <img src="EDA_excel1.jpg" alt="Excel Exploratory Data Analysis" class="project-image">
+                </div>
+                <div class="project-image-container">
+                    <img src="Excel_EDA.jpg" alt="Excel Data Visualization" class="project-image">
+                </div>
             </div>
             
             <ul class="insights-list">
@@ -736,10 +781,18 @@
             </div>
             
             <div class="image-gallery">
-                <img src="Retailsales_mysql.jpg" alt="Retail Sales SQL Analysis" class="project-image">
-                <img src="Retailsales1_mysql.jpg" alt="Retail Sales SQL Analysis 2" class="project-image">
-                <img src="Netflix_SQL1.jpg" alt="Netflix SQL Analysis" class="project-image">
-                <img src="Netflix_SQL.jpg" alt="Netflix SQL Analysis 2" class="project-image">
+                <div class="project-image-container">
+                    <img src="Retailsales_mysql.jpg" alt="Retail Sales SQL Analysis" class="project-image">
+                </div>
+                <div class="project-image-container">
+                    <img src="Retailsales1_mysql.jpg" alt="Retail Sales SQL Analysis 2" class="project-image">
+                </div>
+                <div class="project-image-container">
+                    <img src="Netflix_SQL1.jpg" alt="Netflix SQL Analysis" class="project-image">
+                </div>
+                <div class="project-image-container">
+                    <img src="Netflix_SQL.jpg" alt="Netflix SQL Analysis 2" class="project-image">
+                </div>
             </div>
             
             <ul class="insights-list">
@@ -762,9 +815,15 @@
             </div>
             
             <div class="image-gallery">
-                <img src="Nyk_main.jpg" alt="Nykaa Main Dashboard" class="project-image">
-                <img src="Nyka2.jpg" alt="Nykaa Analysis 2" class="project-image">
-                <img src="Nyka1.jpg" alt="Nykaa Analysis 1" class="project-image">
+                <div class="project-image-container">
+                    <img src="Nyk_main.jpg" alt="Nykaa Main Dashboard" class="project-image">
+                </div>
+                <div class="project-image-container">
+                    <img src="Nyka2.jpg" alt="Nykaa Analysis 2" class="project-image">
+                </div>
+                <div class="project-image-container">
+                    <img src="Nyka1.jpg" alt="Nykaa Analysis 1" class="project-image">
+                </div>
             </div>
             
             <ul class="insights-list">
