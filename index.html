@@ -836,45 +836,160 @@
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section education-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Education</h2>
+<!-- Education & Certifications Section -->
+<section id="education" class="section education-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Education & Certifications</h2>
+        </div>
+        
+        <div class="education-grid">
+            <div class="education-item">
+                <div class="education-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="education-content">
+                    <h3>Bachelor of Commerce</h3>
+                    <p class="education-institution">Vels Institute of Science</p>
+                    <span class="education-date">2019 - 2022</span>
+                </div>
             </div>
             
-            <div class="timeline">
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <span class="timeline-date">2019 - 2022</span>
-                        <h3>Bachelor of Commerce in General</h3>
-                        <p>Vels Institute of Science, Technology & Advanced Studies</p>
-                    </div>
+            <div class="education-item">
+                <div class="education-icon">
+                    <i class="fas fa-briefcase"></i>
                 </div>
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <span class="timeline-date">2022 - 2024</span>
-                        <h3>Amazon - Digital Content Associate</h3>
-                        <p>Professional Experience</p>
-                    </div>
+                <div class="education-content">
+                    <h3>Digital Content Associate</h3>
+                    <p class="education-institution">Amazon Kindle</p>
+                    <span class="education-date">2022 - 2024</span>
                 </div>
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <span class="timeline-date">2025</span>
-                        <h3>Business Analytics & Digital Marketing Certification</h3>
-                        <p>GUVI + IITM Pravartak</p>
-                    </div>                
+            </div>
+            
+            <div class="education-item">
+                <div class="education-icon">
+                    <i class="fas fa-award"></i>
                 </div>
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <span class="timeline-date">2025</span>
-                        <h3>Google Cybersecurity Professional Certificate</h3>
-                        <p>Google</p>
-                    </div>
+                <div class="education-content">
+                    <h3>Google Cybersecurity</h3>
+                    <p class="education-institution">Google</p>
+                    <span class="education-date">2025</span>
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="education-content">
+                    <h3>Business Analytics</h3>
+                    <p class="education-institution">GUVI</p>
+                    <span class="education-date">2025</span>
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="education-content">
+                    <h3>Generative AI</h3>
+                    <p class="education-institution">GUVI</p>
+                    <span class="education-date">2025</span>
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <div class="education-content">
+                    <h3>Six Sigma White Belt</h3>
+                    <p class="education-institution">CSSC</p>
+                    <span class="education-date">2025</span>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.education-item {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    border-top: 3px solid var(--secondary);
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.education-icon {
+    background: rgba(100, 255, 218, 0.1);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--secondary);
+    margin: 0 auto 15px;
+}
+
+.education-icon i {
+    font-size: 1.3rem;
+    color: var(--secondary);
+}
+
+.education-content h3 {
+    color: var(--secondary);
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.education-institution {
+    color: var(--light);
+    font-size: 1rem;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.education-date {
+    display: inline-block;
+    background: rgba(100, 255, 218, 0.1);
+    color: var(--secondary);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(100, 255, 218, 0.3);
+}
+
+@media (max-width: 768px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .education-item {
+        padding: 20px;
+    }
+}
+</style>
 
     <!-- Skills Section -->
     <section id="skills" class="section skills-section">
@@ -1230,6 +1345,7 @@
     </script>
 </body>
 </html>
+
 
 
 
