@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Niyaz - Analyst Portfolio</title>
+    <title>Mohammed Niyaz - Business Analyst Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -11,7 +11,6 @@
             --secondary: #64ffda;
             --light: #ccd6f6;
             --dark: #1e2a3a;
-            --accent: #64ffda;
             --text: #e6f1ff;
             --card-bg: #112240;
         }
@@ -25,7 +24,7 @@
         
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 100px;
+            scroll-padding-top: 80px;
         }
         
         body {
@@ -255,7 +254,130 @@
             width: 100%;
         }
         
-        /* Sections */
+        /* PPT Slide Sections */
+        .ppt-slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+        
+        .slide-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.85);
+        }
+        
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .slide-title {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .slide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .slide-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        
+        .slide-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .insights-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .insights-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--light);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .insights-list li::before {
+            content: '▸';
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Skills Slides */
+        .skills-slide {
+            background: var(--dark);
+        }
+        
+        .samples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .sample-item {
+            background: var(--card-bg);
+            border: 2px solid rgba(100, 255, 218, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .sample-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+            box-shadow: 0 10px 25px rgba(100, 255, 218, 0.2);
+        }
+        
+        .sample-item img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        
+        /* Regular Sections */
         .section {
             padding: 100px 0;
             position: relative;
@@ -296,213 +418,6 @@
             transform: translateX(-50%);
         }
         
-        .section-title p {
-            max-width: 700px;
-            margin: 30px auto 0;
-            color: var(--light);
-            opacity: 0.8;
-        }
-        
-        /* About Section */
-        .about-content {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .about-text {
-            flex: 1;
-        }
-        
-        .professional-card {
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            margin-bottom: 30px;
-            border-left: 3px solid var(--secondary);
-            transform: translateY(20px);
-            opacity: 0;
-            animation: fadeInUp 0.5s forwards;
-            transition: all 0.3s ease;
-            will-change: transform, opacity;
-        }
-        
-        .professional-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-        }
-        
-        .professional-card:nth-child(1) {
-            animation-delay: 0.3s;
-        }
-        
-        .professional-card:nth-child(2) {
-            animation-delay: 0.6s;
-        }
-        
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--secondary);
-        }
-        
-        .about-text p {
-            margin-bottom: 20px;
-            color: var(--light);
-            opacity: 0.9;
-            line-height: 1.8;
-        }
-        
-        /* Skills Section */
-        .skills-section {
-            background-color: var(--dark);
-        }
-        
-        .skills-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .skill-category {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transform: translateY(20px);
-            opacity: 0;
-            animation: fadeInUp 0.5s forwards;
-            transition: all 0.3s ease;
-            border-top: 2px solid var(--secondary);
-            will-change: transform, opacity;
-        }
-        
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-        
-        .skill-category:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-        
-        .skill-category:nth-child(2) {
-            animation-delay: 0.4s;
-        }
-        
-        .skill-category:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-        
-        .skill-category h3 {
-            color: var(--secondary);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(100, 255, 218, 0.2);
-        }
-        
-        .skill-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .skill-item {
-            background-color: rgba(100, 255, 218, 0.1);
-            color: var(--secondary);
-            padding: 8px 15px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid rgba(100, 255, 218, 0.2);
-        }
-        
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        
-        .project-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            transform: translateY(20px);
-            opacity: 0;
-            animation: fadeInUp 0.5s forwards;
-            will-change: transform, opacity;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-        }
-        
-        .project-img {
-            height: 200px;
-            width: 100%;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            will-change: transform;
-        }
-        
-        .project-img::before {
-            content: attr(data-project-number);
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 3rem;
-            font-weight: 700;
-            color: rgba(100, 255, 218, 0.1);
-            z-index: 1;
-        }
-        
-        .project-card:hover .project-img {
-            transform: scale(1.05);
-        }
-        
-        .project-content {
-            padding: 30px;
-        }
-        
-        .project-content h3 {
-            margin-bottom: 15px;
-            color: var(--secondary);
-            font-size: 1.4rem;
-        }
-        
-        .project-content p {
-            color: var(--light);
-            opacity: 0.8;
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-        
-        .project-tag {
-            background-color: rgba(100, 255, 218, 0.1);
-            color: var(--secondary);
-            padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid rgba(100, 255, 218, 0.3);
-        }
-        
         /* Education Section */
         .education-section {
             background-color: var(--dark);
@@ -531,10 +446,6 @@
             position: relative;
             width: 50%;
             box-sizing: border-box;
-            transform: translateY(20px);
-            opacity: 0;
-            animation: fadeInUp 0.5s forwards;
-            will-change: transform, opacity;
         }
         
         .timeline-item::after {
@@ -593,17 +504,51 @@
             margin-bottom: 10px;
         }
         
-        /* Contact Section */
-        .contact-section {
+        /* Skills Section */
+        .skills-section {
             background-color: var(--dark);
         }
         
-        .contact-section .section-title h2 {
-            color: var(--light);
+        .skills-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
         
-        .contact-section .section-title h2::after {
-            background-color: var(--secondary);
+        .skill-category {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-top: 2px solid var(--secondary);
+        }
+        
+        .skill-category h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.2);
+        }
+        
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-item {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: var(--secondary);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background-color: var(--dark);
         }
         
         .contact-grid {
@@ -651,35 +596,12 @@
             justify-content: center;
             background-color: rgba(100, 255, 218, 0.1);
             border: 1px solid rgba(100, 255, 218, 0.3);
-            will-change: transform;
         }
         
         .social-links a:hover {
             color: var(--secondary);
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
-        }
-        
-        /* Certifications */
-        .certifications {
-            margin-top: 50px;
-            text-align: center;
-        }
-        
-        .certifications h3 {
-            margin-bottom: 20px;
-            color: var(--secondary);
-        }
-        
-        .certification-item {
-            display: inline-block;
-            background-color: var(--card-bg);
-            padding: 15px 30px;
-            border-radius: 50px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            font-weight: 600;
-            color: var(--secondary);
-            border: 1px solid rgba(100, 255, 218, 0.3);
         }
         
         /* Footer */
@@ -692,240 +614,20 @@
             border-top: 1px solid rgba(100, 255, 218, 0.1);
         }
         
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
+        /* Responsive */
+        @media (max-width: 768px) {
+            .slide-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            
+            .slide-title {
+                font-size: 2.5rem;
             }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(10, 25, 47, 0.95);
-            backdrop-filter: blur(5px);
-            animation: fadeIn 0.3s ease;
-        }
-        
-        .modal-content {
-            background-color: var(--card-bg);
-            margin: 5% auto;
-            padding: 40px;
-            border: 1px solid var(--secondary);
-            border-radius: 10px;
-            width: 80%;
-            max-width: 900px;
-            position: relative;
-            box-shadow: 0 0 30px rgba(100, 255, 218, 0.2);
-            transform: translateY(20px);
-            opacity: 0;
-            animation: fadeInUp 0.3s ease forwards;
-            will-change: transform, opacity;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: var(--secondary);
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .close-modal:hover {
-            color: var(--light);
-            transform: rotate(90deg);
-        }
-        
-        .modal-header {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(100, 255, 218, 0.3);
-        }
-        
-        .modal-header h2 {
-            color: var(--secondary);
-            font-size: 2rem;
-        }
-        
-        .modal-body {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-        
-        .project-documents {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .document-card {
-            background-color: var(--dark);
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid rgba(100, 255, 218, 0.2);
-            transition: all 0.3s ease;
-            flex: 1 1 200px;
-            transform: translateY(20px);
-            opacity: 0;
-            animation: fadeInUp 0.5s forwards;
-            will-change: transform, opacity;
-        }
-        
-        .document-card:nth-child(1) { animation-delay: 0.2s; }
-        .document-card:nth-child(2) { animation-delay: 0.4s; }
-        .document-card:nth-child(3) { animation-delay: 0.6s; }
-        
-        .document-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.1);
-        }
-        
-        .document-card a {
-            color: var(--secondary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .document-card i {
-            font-size: 1.5rem;
-        }
-        
-        .case-study-points {
-            background-color: var(--dark);
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 3px solid var(--secondary);
-            transform: translateY(20px);
-            opacity: 0;
-            animation: fadeInUp 0.5s forwards;
-            animation-delay: 0.3s;
-        }
-        
-        .case-study-points h3 {
-            color: var(--secondary);
-            margin-bottom: 15px;
-        }
-        
-        .case-study-points ul {
-            padding-left: 20px;
-        }
-        
-        .case-study-points li {
-            margin-bottom: 10px;
-            color: var(--light);
-        }
-        
-        /* Responsive Styles */
-        @media (max-width: 992px) {
+            
             .profile-container {
                 flex-direction: column;
                 text-align: center;
-            }
-            
-            .title-frame::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            header h1 {
-                font-size: 2.8rem;
-            }
-            
-            header h2 {
-                font-size: 1.6rem;
-            }
-            
-            .header-content {
-                text-align: center;
-            }
-            
-            .header-content p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .header-buttons {
-                justify-content: center;
-            }
-            
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .modal-content {
-                width: 90%;
-                padding: 30px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            header {
-                padding: 80px 0;
-                min-height: auto;
-            }
-            
-            header h1 {
-                font-size: 2.2rem;
-            }
-            
-            header h2 {
-                font-size: 1.3rem;
-            }
-            
-            .tagline {
-                font-size: 1.2rem;
-            }
-            
-            .profile-image {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .btn {
-                padding: 12px 25px;
-            }
-            
-            .section {
-                padding: 80px 0;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
             }
             
             .nav-container {
@@ -937,36 +639,7 @@
             }
             
             .nav-links li {
-                margin-left: 15px;
-                margin-right: 15px;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .timeline::after {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item::after {
-                left: 21px;
-            }
-            
-            .left, .right {
-                left: 0;
-                text-align: left;
-            }
-            
-            .modal-content {
-                width: 95%;
-                padding: 20px;
+                margin: 0 15px;
             }
         }
     </style>
@@ -981,210 +654,175 @@
                     <div class="title-frame">
                         <h1>Mohammed Niyaz.M</h1>
                         <h2>Analyst</h2>
-                        <p class="tagline">My journey is about more than a single path, it’s about a diverse toolkit of skills and experiences to create meaningful change.
-                        “Certified Six Sigma White Belt, with knowledge in process optimization and efficiency improvement.”</p>
+                        <p class="tagline">My journey is about more than a single path, it's about a diverse toolkit of skills and experiences to create meaningful change.</p>
                     </div>
                     <p>A curious polymath with passions ranging from technology to fitness, martial arts, and creative editing like Photoshop, I enjoy learning across disciplines and applying knowledge in unique ways. I have completed the Google Cybersecurity Professional Certificate and am currently pursuing Google IT Automation with Python and Cisco IT Essentials 1 & 2. With 2 years of experience as a Digital Content Associate at Amazon Kindle Operations, I specialize in automation, quality assurance, data-driven problem solving, and exploring AI applications.</p>
                     <div class="header-buttons">
-                        <a href="#projects" class="btn">View My Projects</a>
-                        <a href="Niyaz.M.pdf" class="btn btn-outline">Download Resume</a>
+                        <a href="#nykaa-slide" class="btn">View My Projects</a>
+                        <a href="M.Niyaz_Resume.pdf" class="btn btn-outline">Download Resume</a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-<!-- Navigation -->
-<nav>
-    <div class="container nav-container">
-        <a href="#" class="logo">Mohammed Niyaz.M</a>
-        <div class="nav-scroll-container">
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">Mohammed Niyaz.M</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#nykaa-slide">Nykaa</a></li>
+                <li><a href="#netflix-slide">Netflix</a></li>
+                <li><a href="#retail-slide">Retail</a></li>
+                <li><a href="#excel-slide">Excel</a></li>
+                <li><a href="#sql-slide">SQL</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#certifications-display">Certifications</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
-        <div class="mobile-menu-toggle">
-            <i class="fas fa-bars"></i>
-        </div>
-    </div>
-</nav>
+    </nav>
 
-<style>
-/* Navigation Styles with Horizontal Scroll */
-.nav-scroll-container {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
-}
-
-.nav-scroll-container::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    white-space: nowrap;
-    padding-bottom: 5px; /* Space for scroll */
-}
-
-.nav-links li {
-    margin: 0 15px;
-    flex-shrink: 0; /* Prevent items from shrinking */
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--light);
-    font-weight: 500;
-    transition: all 0.3s ease;
-    position: relative;
-    padding: 5px 0;
-    display: block;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--secondary);
-    transition: width 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--secondary);
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-/* Mobile Menu Toggle (Hidden by default) */
-.mobile-menu-toggle {
-    display: none;
-    color: var(--light);
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-/* Responsive Navigation */
-@media (max-width: 992px) {
-    .nav-container {
-        position: relative;
-    }
-    
-    .nav-scroll-container {
-        max-width: calc(100% - 100px); /* Space for logo */
-    }
-    
-    .nav-links li {
-        margin: 0 12px;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-container {
-        flex-wrap: nowrap;
-    }
-    
-    .nav-scroll-container {
-        max-width: calc(100% - 80px);
-        margin-left: 15px;
-    }
-    
-    .nav-links li {
-        margin: 0 10px;
-    }
-    
-    .nav-links a {
-        font-size: 0.9rem;
-        padding: 8px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-scroll-container {
-        max-width: calc(100% - 70px);
-    }
-    
-    .nav-links li {
-        margin: 0 8px;
-    }
-    
-    .nav-links a {
-        font-size: 0.85rem;
-    }
-    
-    .logo {
-        font-size: 1rem;
-    }
-}
-
-/* Smooth scrolling for the navigation */
-.nav-scroll-container {
-    scroll-behavior: smooth;
-}
-
-/* Optional: Add scroll indicators */
-.nav-scroll-container {
-    position: relative;
-}
-
-.nav-scroll-container::before,
-.nav-scroll-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 20px;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.nav-scroll-container::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(10, 25, 47, 0.9) 0%, transparent 100%);
-}
-
-.nav-scroll-container::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(10, 25, 47, 0.9) 0%, transparent 100%);
-}
-</style>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Me</h2>
+    <!-- Nykaa Slide -->
+    <section id="nykaa-slide" class="ppt-slide">
+        <div class="slide-background" style="background-image: url('Nyk_main.jpg');"></div>
+        <div class="slide-content">
+            <h2 class="slide-title">💄 Nykaa E-Commerce Analysis</h2>
+            <div class="slide-grid">
+                <div>
+                    <img src="Nyka1.jpg" alt="Nykaa Analysis 1" class="slide-image">
+                    <img src="Nyka2.jpg" alt="Nykaa Analysis 2" class="slide-image" style="margin-top: 20px;">
+                </div>
+                <div>
+                    <ul class="insights-list">
+                        <li>Analyzed sales performance across beauty categories, identifying top-performing brands and seasonal trends</li>
+                        <li>Tracked customer behavior patterns to optimize marketing strategies and improve conversion rates</li>
+                        <li>Monitored inventory turnover rates to streamline supply chain and reduce operational costs</li>
+                        <li>Identified regional sales hotspots to guide targeted marketing campaigns</li>
+                        <li>Developed customer segmentation models for personalized marketing approaches</li>
+                        <li>Optimized pricing strategies based on competitor analysis and market demand</li>
+                    </ul>
+                </div>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="professional-card">
-                        <h3>Analyst</h3>
-                        <p>As an ambitious 23-year-old, my professional journey began at Amazon Kindle, where I managed the overall marketplace for e-books, handling the requirements of authors, customers, and stakeholders. I maintained high standards for productivity, quality, and speed without compromise. Looking forward, my focus is on expanding my skills in cybersecurity and IT automation to grow with the digital world as it continues to expand.</p>
+        </div>
+    </section>
+
+    <!-- Netflix Slide -->
+    <section id="netflix-slide" class="ppt-slide">
+        <div class="slide-background" style="background-image: url('Nt_DB.jpg');"></div>
+        <div class="slide-content">
+            <h2 class="slide-title">🎬 Netflix Content Analytics</h2>
+            <div class="slide-grid">
+                <div>
+                    <img src="Netflix_SQL.jpg" alt="Netflix SQL Analysis" class="slide-image">
+                    <img src="Netflix_SQL1.jpg" alt="Netflix SQL Analysis 2" class="slide-image" style="margin-top: 20px;">
+                </div>
+                <div>
+                    <ul class="insights-list">
+                        <li>Analyzed viewer demographics and preferences to identify content engagement patterns</li>
+                        <li>Identified peak viewing periods and content consumption trends to optimize release schedules</li>
+                        <li>Evaluated genre performance and rating correlations to understand subscriber preferences</li>
+                        <li>Provided data-driven insights for content acquisition and original programming decisions</li>
+                        <li>Tracked subscriber retention rates and churn patterns across different regions</li>
+                        <li>Developed content recommendation algorithms based on viewing history analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Retail Slide -->
+    <section id="retail-slide" class="ppt-slide">
+        <div class="slide-background" style="background-image: url('OR_DB.jpg');"></div>
+        <div class="slide-content">
+            <h2 class="slide-title">🛒 Online Retail Sales Analytics</h2>
+            <div class="slide-grid">
+                <div>
+                    <img src="Retailsales_mysql.jpg" alt="Retail Sales SQL" class="slide-image">
+                    <img src="Retailsales1_mysql.jpg" alt="Retail Sales SQL 2" class="slide-image" style="margin-top: 20px;">
+                </div>
+                <div>
+                    <ul class="insights-list">
+                        <li>Identified top-selling product categories and customer segments driving 80% of revenue</li>
+                        <li>Analyzed seasonal sales patterns and customer purchasing behavior to forecast demand</li>
+                        <li>Tracked key performance indicators including customer lifetime value and retention rates</li>
+                        <li>Visualized sales funnel metrics to identify drop-off points and optimize conversions</li>
+                        <li>Implemented A/B testing for website optimization and user experience improvements</li>
+                        <li>Developed inventory management strategies based on sales velocity and seasonality</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Excel Analytics Slide -->
+    <section id="excel-slide" class="ppt-slide skills-slide">
+        <div class="slide-content">
+            <h2 class="slide-title">📈 Excel Analytics</h2>
+            <div class="slide-grid">
+                <div>
+                    <img src="Pivot table.jpg" alt="Excel Pivot Table" class="slide-image">
+                    <div class="samples-grid">
+                        <div class="sample-item">
+                            <img src="EDA_excel1.jpg" alt="Excel EDA">
+                            <p>Exploratory Data Analysis</p>
+                        </div>
+                        <div class="sample-item">
+                            <img src="Excel_EDA.jpg" alt="Excel Analysis">
+                            <p>Data Visualization</p>
+                        </div>
                     </div>
-                    
-                    <div class="professional-card">
-                        <h3>My Professional Journey</h3>
-                        <p> • As a <strong>Digital Content Associate</strong> at Amazon Kindle (2022-2024),</p> 
-                        <p> • Process Automation: By automating reporting with Python and VBA scripts, you reduced manual report generation time by 20%, saving your team over 260 hours annually.</p>
-                        <p> • Business Intelligence: You developed and maintained two Amazon QuickSight dashboards to track key metrics for 31 team members, which improved operational visibility by 40%.</p>
-                        <p> • Quality Assurance: You managed the quality verification of more than 10,000 digital assets per month, achieving a 99.5% accuracy rate and reducing customer complaints by 15%.</p>
-                        <p> • Operational Excellence: Through systematic root cause analysis, you identified and resolved three critical publishing bottlenecks, which improved SLA adherence from 85% to 96%.</p>
-                        <p> • Productivity & Data Management: You used complex SQL queries to extract and organize over 5,000 ASINs weekly, improving team productivity by 25%.</p>
-                        <p> • Leadership & Mentorship: You mentored three new team members, providing them with training on audit workflows and defect tracking systems, which reduced the average onboarding time by 30%.</p>
+                </div>
+                <div>
+                    <ul class="insights-list">
+                        <li>Advanced data cleaning and preparation using Power Query and data transformation tools</li>
+                        <li>Exploratory Data Analysis (EDA) with statistical functions, conditional formatting, and data validation</li>
+                        <li>Dynamic reporting with Pivot Tables, Pivot Charts, and advanced filtering for business intelligence</li>
+                        <li>Data visualization and interactive dashboard creation for stakeholder presentations and decision-making</li>
+                        <li>Automated reporting processes using macros and VBA scripting to improve efficiency</li>
+                        <li>Complex formula creation including INDEX-MATCH, array formulas, and advanced lookup functions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SQL Analysis Slide -->
+    <section id="sql-slide" class="ppt-slide skills-slide">
+        <div class="slide-content">
+            <h2 class="slide-title">🗃️ SQL Database Analysis</h2>
+            <div class="slide-grid">
+                <div>
+                    <div class="samples-grid">
+                        <div class="sample-item">
+                            <img src="Retailsales_mysql.jpg" alt="Retail SQL">
+                            <p>Sales Analysis</p>
+                        </div>
+                        <div class="sample-item">
+                            <img src="Retailsales1_mysql.jpg" alt="Retail SQL 2">
+                            <p>Revenue Analytics</p>
+                        </div>
+                        <div class="sample-item">
+                            <img src="Netflix_SQL.jpg" alt="Netflix SQL">
+                            <p>Content Analysis</p>
+                        </div>
+                        <div class="sample-item">
+                            <img src="Netflix_SQL1.jpg" alt="Netflix SQL 2">
+                            <p>Viewer Analytics</p>
+                        </div>
                     </div>
+                </div>
+                <div>
+                    <ul class="insights-list">
+                        <li>Complex query writing with multiple JOIN operations across relational databases including MySQL and PostgreSQL</li>
+                        <li>Data aggregation and analytical functions for comprehensive business reporting and KPI tracking</li>
+                        <li>Subqueries and Common Table Expressions (CTEs) for advanced data manipulation and complex calculations</li>
+                        <li>Performance optimization techniques and efficient data extraction strategies for large datasets</li>
+                        <li>Database design and normalization principles for optimal data structure and query performance</li>
+                        <li>Stored procedures and function creation for automated reporting and data processing workflows</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -1198,149 +836,32 @@
             </div>
             
             <div class="timeline">
-                <div class="timeline-item left" style="animation-delay: 0.2s;">
+                <div class="timeline-item left">
                     <div class="timeline-content">
                         <span class="timeline-date">2019 - 2022</span>
                         <h3>Bachelor of Commerce in General</h3>
                         <p>Vels Institute of Science, Technology & Advanced Studies</p>
                     </div>
                 </div>
-                <div class="timeline-item right" style="animation-delay: 0.4s;">
+                <div class="timeline-item right">
                     <div class="timeline-content">
                         <span class="timeline-date">2022 - 2024</span>
                         <h3>Amazon - Digital Content Associate</h3>
                         <p>Professional Experience</p>
                     </div>
                 </div>
-                <div class="timeline-item left" style="animation-delay: 0.6s;">
+                <div class="timeline-item left">
                     <div class="timeline-content">
                         <span class="timeline-date">2025</span>
                         <h3>Business Analytics & Digital Marketing Certification</h3>
                         <p>GUVI + IITM Pravartak</p>
                     </div>                
                 </div>
-                <div class="timeline-item right" style="animation-delay: 0.8s;">
+                <div class="timeline-item right">
                     <div class="timeline-content">
                         <span class="timeline-date">2025</span>
                         <h3>Google Cybersecurity Professional Certificate</h3>
                         <p>Google</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<!-- Projects Section -->
-<section id="projects" class="section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Projects</h2>
-            <p>There are upcoming projects based on IT automation with Python and cybersecurity from my recently completed and ongoing courses. These initiatives are designed to showcase my ability to apply newly acquired knowledge to practical, real-world scenarios.</p>
-        </div>
-            
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card" style="animation-delay: 0.1s;">
-                    <div class="project-img" data-project-number="1" style="background-image: url('pptx.webp');"></div>
-                    <div class="project-content">
-                        <h3>New Nykaa Analysis</h3>
-                        <p>Domain: E-commerce - Fashion and Apparel</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Brand Perception Accuracy</span>
-                            <span class="project-tag">review Analysis Quality</span>
-                            <span class="project-tag">Trend Identification</span>
-                            <span class="project-tag">Strategic Recommendations</span>
-                        </div>
-                        <button class="btn view-case-study" data-project="1">View Case Study</button>
-                    </div>
-                </div>
-                
-                <!-- Project 2 -->
-                <div class="project-card" style="animation-delay: 0.2s;">
-                    <div class="project-img" data-project-number="2" style="background-image: url('microsoft-office.png');"></div>
-                    <div class="project-content">
-                        <h3>Analyzing and Visualizing Regional Sales Performance</h3>
-                        <p>Domain: Retail Sales Analytics</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Excel</span>
-                            <span class="project-tag">Data Cleaning</span>
-                            <span class="project-tag">Pivot Tables</span>
-                            <span class="project-tag">Charts</span>
-                            <span class="project-tag">Dashboard</span>
-                            <span class="project-tag">Regression Analysis</span>
-                        </div>
-                        <button class="btn view-case-study" data-project="2">View Case Study</button>
-                    </div>
-                </div>
-                
-                <!-- Project 3 -->
-                <div class="project-card" style="animation-delay: 0.3s;">
-                    <div class="project-img" data-project-number="3" style="background-image: url('maxresdefault.jpg');"></div>
-                    <div class="project-content">
-                        <h3>Customer Demographics and Purchase Behavior Analysis</h3>
-                        <p>Domain: Business Analytics, Marketing Analytics, Retail Analytics</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Excel</span>
-                            <span class="project-tag">Data Analysis</span>
-                            <span class="project-tag">Data Visualization</span>
-                            <span class="project-tag">Pivot Tables</span>
-                            <span class="project-tag">Customer Segmentation</span>
-                            <span class="project-tag">Marketing Analytics</span>
-                        </div>
-                        <button class="btn view-case-study" data-project="3">View Case Study</button>
-                    </div>
-                </div>
-                
-                <!-- Project 4 -->
-                <div class="project-card" style="animation-delay: 0.4s;">
-                    <div class="project-img" data-project-number="4" style="background-image: url('power-BI.jpg');"></div>
-                    <div class="project-content">
-                        <h3>Zomato Order & Restaurant Analyst Using Power BI</h3>
-                        <p>Domain: Food & Beverage, Business Analytics</p>
-                        <div class="project-tags">
-                            <span class="project-tag">REMED</span>
-                            <span class="project-tag">REPORTED</span>
-                            <span class="project-tag">REPORTED</span>
-                        </div>
-                        <button class="btn view-case-study" data-project="4">View Case Study</button>
-                    </div>
-                </div>
-                
-                <!-- Project 5 -->
-                <div class="project-card" style="animation-delay: 0.5s;">
-                    <div class="project-img" data-project-number="5" style="background-image: url('sqql.jpg');"></div>
-                    <div class="project-content">
-                        <h3>Amazon Fresh Analysts</h3>
-                        <p>Domain: E-commerce and Retail Analytics</p>
-                        <div class="project-tags">
-                            <span class="project-tag">SQL</span>
-                            <span class="project-tag">DDL</span>
-                            <span class="project-tag">DML</span>
-                            <span class="project-tag">TCL</span>
-                            <span class="project-tag">ACID Transactions</span>
-                            <span class="project-tag">Database Normalization</span>
-                            <span class="project-tag">Business Insights</span>
-                            <span class="project-tag">E-commerce Analytics</span>
-                        </div>
-                        <button class="btn view-case-study" data-project="5">View Case Study</button>
-                    </div>
-                </div>
-                
-                <!-- Project 6 -->
-                <div class="project-card" style="animation-delay: 0.6s;">
-                    <div class="project-img" data-project-number="6" style="background-image: url('sqll.png');"></div>
-                    <div class="project-content">
-                        <h3>Healthcare Analysts with SQL</h3>
-                        <p>Domain: Healthcare Analytics</p>
-                        <div class="project-tags">
-                            <span class="project-tag">SQL</span>
-                            <span class="project-tag">Joins (Inner, Left, Right, Full Outer)</span>
-                            <span class="project-tag">Aggregate Functions</span>
-                            <span class="project-tag">Window Functions</span>
-                            <span class="project-tag">Subqueries</span>
-                            <span class="project-tag">Data Analysis</span>
-                        </div>
-                        <button class="btn view-case-study" data-project="6">View Case Study</button>
                     </div>
                 </div>
             </div>
@@ -1363,7 +884,6 @@
                         <span class="skill-item">SQL</span>
                         <span class="skill-item">Python</span>
                         <span class="skill-item">Amazon QuickSight</span>
-                        <span class="skill-item">Python</span>
                         <span class="skill-item">Tableau</span>
                         <span class="skill-item">Microsoft Office</span>
                         <span class="skill-item">Dashboard Creation</span>
@@ -1395,641 +915,74 @@
                     </div>
                 </div>
             </div>
-            
-<div class="certifications">
-    <h3>Certifications</h3>
-    <div class="certifications-grid">
-        <div class="certification-item">
-            <i class="fas fa-chart-line"></i>
-            <h4>Business Analytics & Digital Marketing</h4>
-            <p>GUVI</p>
-            <span class="cert-date">2025</span>
         </div>
-        <div class="certification-item">
-            <i class="fas fa-shield-alt"></i>
-            <h4>Google Cybersecurity Professional Certificate</h4>
-            <p>Google</p>
-            <span class="cert-date">2025</span>
-        </div>
-        <div class="certification-item">
-            <i class="fas fa-robot"></i>
-            <h4>Generative AI Certification</h4>
-            <p>GUVI</p>
-            <span class="cert-date">2025</span>
-        </div>
-    </div>
-</div>
+    </section>
 
-
-<!-- Contact Section -->
-<section id="contact" class="section contact-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Contact Information</h2>
-        </div>
-        
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>Get In Touch</h3>
-                <div class="contact-details">
-                    <p><i class="fas fa-envelope"></i>m.niyaz.official@gmail.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i>Chennai, Tamil Nadu</p>
-                </div>
-                
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/niyaz-mohammed-m-84815b332/" target="_blank" title="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://www.figma.com/proto/rO04dxh1zfby8tIuUoFNbD/Niyaz-s-portfolio?node-id=1-2&starting-point-node-id=1%3A2&scaling=min-zoom&content-scaling=fixed" target="_blank" title="Figma Portfolio">
-                        <i class="fab fa-figma"></i>
-                    </a>
-                    <a href="#" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+            <div style="text-align: center;">
+                <p>Google Cybersecurity Professional Certificate | Business Analytics & Digital Marketing - GUVI | Generative AI Certification - GUVI | Six Sigma White Belt</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Optimized Certifications Display Section -->
-<section id="certifications-display" class="section certifications-display-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Certifications & Badges</h2>
-            <p>Professional certifications that validate my expertise and skills</p>
-        </div>
-        
-        <div class="certifications-grid">
-            <!-- Google Cybersecurity Certificate -->
-            <div class="certificate-item">
-                <div class="image-wrapper">
-                    <img src="Google_cert1.jpg" alt="Google Cybersecurity Certificate" class="certificate-image" loading="lazy">
-                </div>
-                <div class="certificate-content">
-                    <h3>Google Cybersecurity Professional Certificate</h3>
-                    <p>Comprehensive training in cybersecurity fundamentals, tools, and best practices</p>
-                    <span class="issuer">Google</span>
-                    <div class="certificate-date">Issued: 2025</div>
-                </div>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Information</h2>
             </div>
             
-            <!-- Google Badge -->
-            <div class="certificate-item">
-                <div class="image-wrapper">
-                    <img src="Google Cybersecurity Badge1.png" alt="Google Cybersecurity Badge" class="certificate-badge" loading="lazy">
-                </div>
-                <div class="certificate-content">
-                    <h3>Google Cybersecurity Badge</h3>
-                    <p>Official recognition of cybersecurity expertise from Google</p>
-                    <span class="issuer">Google</span>
-                    <div class="certificate-date">Earned: 2025</div>
-                </div>
-            </div>
-            
-            <!-- Business Analytics Certificate -->
-            <div class="certificate-item">
-                <div class="image-wrapper">
-                    <img src="BA_cert1.jpg" alt="Business Analytics Certificate" class="certificate-image" loading="lazy">
-                </div>
-                <div class="certificate-content">
-                    <h3>Business Analytics & Digital Marketing</h3>
-                    <p>Advanced training in data analysis, visualization, and digital marketing strategies</p>
-                    <span class="issuer">GUVI</span>
-                    <div class="certificate-date">Issued: 2025</div>
-                </div>
-            </div>
-            
-            <!-- Generative AI Certificate -->
-            <div class="certificate-item">
-                <div class="image-wrapper">
-                    <img src="gen_ai1.jpg" alt="Generative AI Certificate" class="certificate-image" loading="lazy">
-                </div>
-                <div class="certificate-content">
-                    <h3>Generative AI Certification</h3>
-                    <p>Expertise in generative AI models, applications, and implementation</p>
-                    <span class="issuer">GUVI</span>
-                    <div class="certificate-date">Issued: 2025</div>
-                </div>
-            </div>
-            
-            <!-- Six Sigma White Belt Certificate -->
-            <div class="certificate-item">
-                <div class="image-wrapper">
-                    <img src="Six Sigma White Belt-images-0.JPEG" alt="Six Sigma White Belt Certification" class="certificate-image" loading="lazy">
-                </div>
-                <div class="certificate-content">
-                    <h3>Six Sigma White Belt Certification</h3>
-                    <p>Certified in process improvement methodologies and quality management principles</p>
-                    <span class="issuer">Council for Six Sigma Certification</span>
-                    <div class="certificate-date">Issued: 2025</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-/* Optimized Certifications Section */
-.certifications-display-section {
-    background-color: var(--dark);
-    padding: 60px 0;
-}
-
-.certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 15px;
-    box-sizing: border-box;
-}
-
-.certificate-item {
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-    border-top: 3px solid var(--secondary);
-    text-align: center;
-    padding: 20px 15px;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-
-.certificate-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.image-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-    background: white;
-    border-radius: 8px;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.certificate-image {
-    width: 100%;
-    max-width: 220px;
-    height: auto;
-    max-height: 150px;
-    object-fit: contain;
-    border-radius: 4px;
-}
-
-.certificate-badge {
-    width: 100%;
-    max-width: 100px;
-    height: auto;
-    max-height: 100px;
-    object-fit: contain;
-    border-radius: 4px;
-}
-
-.certificate-content h3 {
-    color: var(--secondary);
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-    line-height: 1.3;
-    font-weight: 600;
-}
-
-.certificate-content p {
-    color: var(--light);
-    opacity: 0.9;
-    font-size: 0.9rem;
-    margin-bottom: 12px;
-    line-height: 1.4;
-}
-
-.issuer {
-    display: inline-block;
-    background-color: rgba(100, 255, 218, 0.1);
-    color: var(--secondary);
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin-bottom: 8px;
-}
-
-.certificate-date {
-    color: var(--light);
-    opacity: 0.7;
-    font-size: 0.8rem;
-    margin-top: 5px;
-}
-
-/* Mobile-specific optimizations */
-@media screen and (max-width: 768px) {
-    .certifications-display-section {
-        padding: 40px 0;
-    }
-    
-    .certifications-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        padding: 0 10px;
-    }
-    
-    .certificate-item {
-        padding: 15px 12px;
-        max-width: 100%;
-    }
-    
-    .image-wrapper {
-        padding: 8px;
-    }
-    
-    .certificate-image {
-        max-width: 180px;
-        max-height: 120px;
-    }
-    
-    .certificate-badge {
-        max-width: 80px;
-        max-height: 80px;
-    }
-    
-    .certificate-content h3 {
-        font-size: 1rem;
-    }
-    
-    .certificate-content p {
-        font-size: 0.85rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .certifications-grid {
-        gap: 12px;
-        padding: 0 8px;
-    }
-    
-    .certificate-item {
-        padding: 12px 10px;
-    }
-    
-    .certificate-image {
-        max-width: 160px;
-        max-height: 110px;
-    }
-    
-    .certificate-badge {
-        max-width: 70px;
-        max-height: 70px;
-    }
-    
-    .certificate-content h3 {
-        font-size: 0.95rem;
-    }
-    
-    .section-title h2 {
-        font-size: 2rem;
-    }
-    
-    .section-title p {
-        font-size: 0.9rem;
-    }
-}
-
-/* Footer Styles */
-footer {
-    background-color: var(--dark);
-    color: var(--light);
-    text-align: center;
-    padding: 30px 0;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(100, 255, 218, 0.1);
-    width: 100%;
-    box-sizing: border-box;
-}
-
-footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-footer p {
-    margin: 0;
-    opacity: 0.8;
-}
-
-/* Prevent horizontal scrolling */
-body {
-    overflow-x: hidden;
-    max-width: 100vw;
-}
-
-.container {
-    max-width: 100%;
-    overflow: hidden;
-}
-</style>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <p>© 2025 Mohammed Niyaz.M . All rights reserved.</p>
-    </div>
-</footer>
-
-    <!-- Project Modals -->
-    <!-- Modal 1 -->
-    <div id="project-modal-1" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2>New Nykaa Analysis</h2>
-            </div>
-            <div class="modal-body">
-                <div class="project-documents">
-                    <div class="document-card">
-                        <a href="Nykaa-A-Deep-Dive-into-Indias-Beauty-and-Fashion-Giant.pptx" target="_blank">
-                            <i class="fas fa-file-powerpoint"></i>
-                            <span>Presentation</span>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i>m.niyaz.official@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i>Chennai, Tamil Nadu</p>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/niyaz-mohammed-m-84815b332/" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.figma.com/proto/rO04dxh1zfby8tIuUoFNbD/Niyaz-s-portfolio?node-id=1-2&starting-point-node-id=1%3A2&scaling=min-zoom&content-scaling=fixed" target="_blank" title="Figma Portfolio">
+                            <i class="fab fa-figma"></i>
+                        </a>
+                        <a href="#" title="GitHub">
+                            <i class="fab fa-github"></i>
                         </a>
                     </div>
                 </div>
-                <div class="case-study-points">
-                    <h3>Case Study Highlights</h3>
-                    <ul>
-                        <li>Brand Perception: Conducted an in-depth analysis of social media and customer reviews to understand how consumers perceive Nykaa.</li>
-                        <li>Customer Satisfaction: Identified key factors influencing customer satisfaction and provided actionable recommendations for improvement.</li>
-                        <li>Market Trends: Researched emerging fashion trends and customer preferences to help Nykaa stay ahead in the industry.</li>
-                        <li>Strategic Recommendations: Developed strategic insights to enhance Nykaa’s market positioning and brand appeal.</li>
-                        <li>Competitive Landscape: Evaluated Nykaa’s position relative to competitors and identified opportunities for differentiation and growth.</li>
-                    </ul>
-                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Modal 2 -->
-    <div id="project-modal-2" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2>Analyzing and Visualizing Regional Sales Performance</h2>
-            </div>
-            <div class="modal-body">
-                <div class="project-documents">
-                    <div class="document-card">
-                        <a href="Sales_Performance_Analysis1.xlsx" target="_blank">
-                            <i class="fas fa-file-excel"></i>
-                            <span>Excel Workbook</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="case-study-points">
-                    <h3>Case Study Highlights</h3>
-                    <ul>
-                        <li>Top-Performing Regions and Product Categories: Identified the highest-performing regions and product categories to optimize sales strategies.</li>
-                        <li>Impact of Discounts: Analyzed the effect of discounts on sales and profit margins to balance profitability and customer engagement.</li>
-                        <li>Actionable Insights: Provided data-driven insights to enhance marketing strategies and improve inventory management.</li>
-                        <li>Product Category Performance: Assess the performance of different product categories and their impact on revenue generation.</li>
-                        <li>Sales Metrics Monitoring: Tracked key sales metrics to support informed and strategic decision-making.</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Mohammed Niyaz.M . All rights reserved.</p>
         </div>
-    </div>
-
-    <!-- Modal 3 -->
-    <div id="project-modal-3" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2>Customer Demographics and Purchase Behavior Analysis</h2>
-            </div>
-            <div class="modal-body">
-                <div class="project-documents">
-                    <div class="document-card">
-                        <a href="Customer_Demographics_and_Purchase_Behavior.xlsx" target="_blank">
-                            <i class="fas fa-file-excel"></i>
-                            <span>Excel Workbook</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="case-study-points">
-                    <h3>Case Study Highlights</h3>
-                    <ul>
-                        <li>Customer Segmentation: Identified key customer groups based on demographics and purchasing behavior to develop targeted marketing strategies.</li>
-                        <li>Sales Forecasting: Analyzed purchase trends to predict future sales and optimize inventory management.</li>
-                        <li>Actionable Insights: Provided data-driven insights to enhance marketing strategies and improve inventory management.</li>
-                        <li>Product Category Performance: Assessed the performance of various product categories to evaluate their impact on revenue generation.</li>
-                        <li>Marketing Strategy Optimization: Leveraged demographic insights to tailor marketing strategies for different regions and age groups.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 4 -->
-    <div id="project-modal-4" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2>Zomato Order & Restaurant Analyst Using Power BI</h2>
-            </div>
-            <div class="modal-body">
-                <div class="project-documents">
-                    <div class="document-card">
-                        <a href="#" target="_blank">
-                            <i class="fas fa-file-powerpoint"></i>
-                            <span>Presentation</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="case-study-points">
-                    <h3>Case Study Highlights</h3>
-                    <ul>
-                        <li>Analyzed order patterns across different restaurant categories</li>
-                        <li>Identified peak ordering times and customer preferences</li>
-                        <li>Created Power BI dashboards for restaurant performance</li>
-                        <li>Developed recommendations for menu optimization</li>
-                        <li>Analyzed customer ratings and feedback trends</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 5 -->
-    <div id="project-modal-5" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2>Amazon Fresh Analysts</h2>
-            </div>
-            <div class="modal-body">
-                <div class="project-documents">
-                    <div class="document-card">
-                        <a href="Amazon-Fresh-Database-Analytics.pptx" target="_blank">
-                            <i class="fas fa-file-powerpoint"></i>
-                            <span>Presentation</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="case-study-points">
-                    <h3>Case Study Highlights</h3>
-                    <ul>
-                        <li>Customer Insights: Analyzed purchasing patterns to identify top customers and high-performing cities, enabling more effective targeted marketing strategies.</li>
-                        <li>Product Management: Monitored product demand, stock levels, and category performance to ensure optimal inventory management.</li>
-                        <li>Supplier Analysis: Identified key suppliers and optimized supply chain operations for improved efficiency and cost-effectiveness.</li>
-                        <li>Revenue Analysis: Evaluated revenue trends to pinpoint high-performing regions and product categories, driving strategic growth.</li>
-                        <li>Customer Satisfaction: Leveraged customer reviews and feedback data to enhance product offerings and improve overall customer experience.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 6 -->
-    <div id="project-modal-6" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="modal-header">
-                <h2>Healthcare Analysts with SQL</h2>
-            </div>
-            <div class="modal-body">
-                <div class="project-documents">
-                    <div class="document-card">
-                        <a href="SQL-Queries-for-Healthcare-Data-Analysis (1).pptx" target="_blank">
-                            <i class="fas fa-file-powerpoint"></i>
-                            <span>Presentation</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="case-study-points">
-                    <h3>Case Study Highlights</h3>
-                    <ul>
-                        <li>Patient Management: Analyzed patient demographics, medical histories, and appointment trends to improve healthcare services and patient care.</li>
-                        <li>Doctor Performance Evaluation: Assessed doctor efficiency by tracking diagnoses, treatment frequency, and patient outcomes.</li>
-                        <li>Appointment Scheduling & Completion: Evaluated appointment trends, cancellations, and completion rates to enhance scheduling efficiency</li>
-                        <li>Medication Analysis: Identified the most commonly prescribed medications based on diagnoses to optimize treatment plans.</li>
-                        <li>Revenue and Billing Analysis: Linked appointment data with billing records to analyze revenue generation and financial performance.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    </footer>
 
     <script>
         // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
             });
         });
-        
-        // Add animation to elements when they come into view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        document.querySelectorAll('.project-card, .timeline-item, .skill-category, .professional-card').forEach(item => {
-            item.style.opacity = 0;
-            item.style.transform = 'translateY(20px)';
-            item.style.transition = 'all 0.5s ease';
-            observer.observe(item);
-        });
-
-        // Modal functionality
-        const modals = document.querySelectorAll('.modal');
-        const modalButtons = document.querySelectorAll('.view-case-study');
-        const closeButtons = document.querySelectorAll('.close-modal');
-
-        // Open modal when button is clicked
-        modalButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const projectId = button.getAttribute('data-project');
-                const modal = document.getElementById(`project-modal-${projectId}`);
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-                
-                // Animate modal content
-                setTimeout(() => {
-                    modal.querySelector('.modal-content').style.opacity = '1';
-                    modal.querySelector('.modal-content').style.transform = 'translateY(0)';
-                }, 10);
-            });
-        });
-
-        // Close modal when X is clicked
-        closeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const modal = button.closest('.modal');
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto'; // Enable scrolling
-                
-                // Reset animation for next open
-                modal.querySelector('.modal-content').style.opacity = '0';
-                modal.querySelector('.modal-content').style.transform = 'translateY(20px)';
-            });
-        });
-
-        // Close modal when clicking outside content
-        window.addEventListener('click', (event) => {
-            modals.forEach(modal => {
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto'; // Enable scrolling
-                    
-                    // Reset animation for next open
-                    modal.querySelector('.modal-content').style.opacity = '0';
-                    modal.querySelector('.modal-content').style.transform = 'translateY(20px)';
-                }
-            });
-        });
-
-        // Close modal with ESC key
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                modals.forEach(modal => {
-                    if (modal.style.display === 'block') {
-                        modal.style.display = 'none';
-                        document.body.style.overflow = 'auto'; // Enable scrolling
-                        
-                        // Reset animation for next open
-                        modal.querySelector('.modal-content').style.opacity = '0';
-                        modal.querySelector('.modal-content').style.transform = 'translateY(20px)';
-                    }
-                });
-            }
-        });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
