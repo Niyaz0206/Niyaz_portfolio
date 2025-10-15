@@ -192,7 +192,7 @@
             background-color: transparent;
         }
         
-        /* Navigation */
+        /* Navigation - Scrollable */
         nav {
             background-color: rgba(10, 25, 47, 0.9);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
@@ -215,15 +215,31 @@
             color: var(--secondary);
             text-decoration: none;
             font-size: 1.2rem;
+            white-space: nowrap;
+        }
+        
+        .nav-scroll-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        .nav-scroll-container::-webkit-scrollbar {
+            display: none;
         }
         
         .nav-links {
             display: flex;
             list-style: none;
+            white-space: nowrap;
+            padding-bottom: 5px;
         }
         
         .nav-links li {
-            margin-left: 30px;
+            margin: 0 20px;
+            flex-shrink: 0;
         }
         
         .nav-links a {
@@ -309,26 +325,25 @@
         
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
             gap: 30px;
             margin-bottom: 50px;
         }
         
         .project-image {
             width: 100%;
-            height: 300px;
+            height: 350px;
             object-fit: contain;
             background-color: var(--card-bg);
-            border-radius: 10px;
-            padding: 20px;
-            border: 2px solid rgba(100, 255, 218, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
             transition: all 0.3s ease;
         }
         
         .project-image:hover {
             transform: translateY(-5px);
             border-color: var(--secondary);
-            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.2);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
         }
         
         .insights-list {
@@ -563,15 +578,16 @@
             }
             
             .project-image {
-                height: 250px;
+                height: 280px;
             }
             
             .nav-container {
                 flex-direction: column;
             }
             
-            .nav-links {
-                margin-top: 20px;
+            .nav-scroll-container {
+                max-width: 100%;
+                margin-top: 15px;
             }
             
             .nav-links li {
@@ -594,7 +610,7 @@
                     </div>
                     <p>A curious polymath with passions ranging from technology to fitness, martial arts, and creative editing like Photoshop, I enjoy learning across disciplines and applying knowledge in unique ways. I have completed the Google Cybersecurity Professional Certificate and am currently pursuing Google IT Automation with Python and Cisco IT Essentials 1 & 2. With 2 years of experience as a Digital Content Associate at Amazon Kindle Operations, I specialize in automation, quality assurance, data-driven problem solving, and exploring AI applications.</p>
                     <div class="header-buttons">
-                        <a href="#excel-analytics" class="btn">View My Work</a>
+                        <a href="#netflix-dashboard" class="btn">View My Work</a>
                         <a href="M.Niyaz_Resume.pdf" class="btn btn-outline">Download Resume</a>
                     </div>
                 </div>
@@ -602,21 +618,24 @@
         </div>
     </header>
 
-    <!-- Navigation -->
+    <!-- Navigation - Scrollable -->
     <nav>
         <div class="container nav-container">
             <a href="#" class="logo">Mohammed Niyaz.M</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#excel-analytics">Excel</a></li>
-                <li><a href="#sql-analysis">SQL</a></li>
-                <li><a href="#netflix-dashboard">Netflix</a></li>
-                <li><a href="#retail-dashboard">Retail</a></li>
-                <li><a href="#nykaa-dashboard">Nykaa</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-scroll-container">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#netflix-dashboard">Netflix Dashboard</a></li>
+                    <li><a href="#retail-dashboard">Retail Dashboard</a></li>
+                    <li><a href="#excel-analytics">Excel</a></li>
+                    <li><a href="#sql-analysis">SQL</a></li>
+                    <li><a href="#nykaa-dashboard">Nykaa</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -634,6 +653,52 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Netflix Analytics Dashboard Section - FIRST -->
+    <section id="netflix-dashboard" class="section project-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>🎬 Netflix Analytics Dashboard</h2>
+                <p>Content performance analysis and viewer insights dashboard</p>
+            </div>
+            
+            <div class="image-gallery">
+                <img src="Nt_DB.jpg" alt="Netflix Analytics Dashboard" class="project-image">
+            </div>
+            
+            <ul class="insights-list">
+                <li>Analyzed viewer demographics and preferences to identify content engagement patterns</li>
+                <li>Identified peak viewing periods and content consumption trends to optimize release schedules</li>
+                <li>Evaluated genre performance and rating correlations to understand subscriber preferences</li>
+                <li>Provided data-driven insights for content acquisition and original programming decisions</li>
+                <li>Tracked subscriber retention rates and churn patterns across different regions</li>
+                <li>Developed content recommendation algorithms based on viewing history analysis</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Online Retail Sales Dashboard Section - SECOND -->
+    <section id="retail-dashboard" class="section project-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>🛒 Online Retail Sales Dashboard</h2>
+                <p>Sales performance and customer behavior analysis dashboard</p>
+            </div>
+            
+            <div class="image-gallery">
+                <img src="OR_DB.jpg" alt="Online Retail Sales Dashboard" class="project-image">
+            </div>
+            
+            <ul class="insights-list">
+                <li>Identified top-selling product categories and customer segments driving 80% of revenue</li>
+                <li>Analyzed seasonal sales patterns and customer purchasing behavior to forecast demand</li>
+                <li>Tracked key performance indicators including customer lifetime value and retention rates</li>
+                <li>Visualized sales funnel metrics to identify drop-off points and optimize conversions</li>
+                <li>Implemented A/B testing for website optimization and user experience improvements</li>
+                <li>Developed inventory management strategies based on sales velocity and seasonality</li>
+            </ul>
         </div>
     </section>
 
@@ -688,58 +753,12 @@
         </div>
     </section>
 
-    <!-- Netflix Dashboard Section -->
-    <section id="netflix-dashboard" class="section project-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>🎬 Netflix Content Analytics</h2>
-                <p>Content performance analysis and viewer insights</p>
-            </div>
-            
-            <div class="image-gallery">
-                <img src="Nt_DB.jpg" alt="Netflix Dashboard Analysis" class="project-image">
-            </div>
-            
-            <ul class="insights-list">
-                <li>Analyzed viewer demographics and preferences to identify content engagement patterns</li>
-                <li>Identified peak viewing periods and content consumption trends to optimize release schedules</li>
-                <li>Evaluated genre performance and rating correlations to understand subscriber preferences</li>
-                <li>Provided data-driven insights for content acquisition and original programming decisions</li>
-                <li>Tracked subscriber retention rates and churn patterns across different regions</li>
-                <li>Developed content recommendation algorithms based on viewing history analysis</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Retail Dashboard Section -->
-    <section id="retail-dashboard" class="section project-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>🛒 Online Retail Sales Analytics</h2>
-                <p>Sales performance and customer behavior analysis</p>
-            </div>
-            
-            <div class="image-gallery">
-                <img src="OR_DB.jpg" alt="Online Retail Dashboard" class="project-image">
-            </div>
-            
-            <ul class="insights-list">
-                <li>Identified top-selling product categories and customer segments driving 80% of revenue</li>
-                <li>Analyzed seasonal sales patterns and customer purchasing behavior to forecast demand</li>
-                <li>Tracked key performance indicators including customer lifetime value and retention rates</li>
-                <li>Visualized sales funnel metrics to identify drop-off points and optimize conversions</li>
-                <li>Implemented A/B testing for website optimization and user experience improvements</li>
-                <li>Developed inventory management strategies based on sales velocity and seasonality</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Nykaa Dashboard Section (LAST) -->
+    <!-- Nykaa Case Study Section - LAST -->
     <section id="nykaa-dashboard" class="section project-section">
         <div class="container">
             <div class="section-title">
-                <h2>💄 Nykaa E-Commerce Analysis</h2>
-                <p>Beauty and fashion e-commerce analytics</p>
+                <h2>💄 Nykaa Case Study</h2>
+                <p>Beauty and fashion e-commerce analytics case study</p>
             </div>
             
             <div class="image-gallery">
@@ -845,6 +864,18 @@
                         <span class="skill-item">Quality Assurance</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certifications</h2>
+            </div>
+            <div style="text-align: center;">
+                <p>Google Cybersecurity Professional Certificate | Business Analytics & Digital Marketing - GUVI | Generative AI Certification - GUVI | Six Sigma White Belt</p>
             </div>
         </div>
     </section>
