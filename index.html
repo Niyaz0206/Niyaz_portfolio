@@ -926,17 +926,253 @@
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Certifications</h2>
+<!-- Certifications Display Section -->
+<section id="certifications" class="section certifications-display-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Certifications & Badges</h2>
+            <p>Professional certifications that validate my expertise and skills</p>
+        </div>
+        
+        <div class="certifications-grid">
+            <!-- Google Cybersecurity Certificate -->
+            <div class="certificate-item">
+                <div class="image-wrapper">
+                    <img src="Google_cert1.jpg" alt="Google Cybersecurity Certificate" class="certificate-image" loading="lazy">
+                </div>
+                <div class="certificate-content">
+                    <h3>Google Cybersecurity Professional Certificate</h3>
+                    <p>Comprehensive training in cybersecurity fundamentals, tools, and best practices</p>
+                    <span class="issuer">Google</span>
+                    <div class="certificate-date">Issued: 2025</div>
+                </div>
             </div>
-            <div style="text-align: center;">
-                <p>Google Cybersecurity Professional Certificate | Business Analytics & Digital Marketing - GUVI | Generative AI Certification - GUVI | Six Sigma White Belt</p>
+            
+            <!-- Google Badge -->
+            <div class="certificate-item">
+                <div class="image-wrapper">
+                    <img src="Google Cybersecurity Badge1.png" alt="Google Cybersecurity Badge" class="certificate-badge" loading="lazy">
+                </div>
+                <div class="certificate-content">
+                    <h3>Google Cybersecurity Badge</h3>
+                    <p>Official recognition of cybersecurity expertise from Google</p>
+                    <span class="issuer">Google</span>
+                    <div class="certificate-date">Earned: 2025</div>
+                </div>
+            </div>
+            
+            <!-- Business Analytics Certificate -->
+            <div class="certificate-item">
+                <div class="image-wrapper">
+                    <img src="BA_cert1.jpg" alt="Business Analytics Certificate" class="certificate-image" loading="lazy">
+                </div>
+                <div class="certificate-content">
+                    <h3>Business Analytics & Digital Marketing</h3>
+                    <p>Advanced training in data analysis, visualization, and digital marketing strategies</p>
+                    <span class="issuer">GUVI</span>
+                    <div class="certificate-date">Issued: 2025</div>
+                </div>
+            </div>
+            
+            <!-- Generative AI Certificate -->
+            <div class="certificate-item">
+                <div class="image-wrapper">
+                    <img src="gen_ai1.jpg" alt="Generative AI Certificate" class="certificate-image" loading="lazy">
+                </div>
+                <div class="certificate-content">
+                    <h3>Generative AI Certification</h3>
+                    <p>Expertise in generative AI models, applications, and implementation</p>
+                    <span class="issuer">GUVI</span>
+                    <div class="certificate-date">Issued: 2025</div>
+                </div>
+            </div>
+            
+            <!-- Six Sigma White Belt Certificate -->
+            <div class="certificate-item">
+                <div class="image-wrapper">
+                    <img src="Six Sigma White Belt-images-0.JPEG" alt="Six Sigma White Belt Certification" class="certificate-image" loading="lazy">
+                </div>
+                <div class="certificate-content">
+                    <h3>Six Sigma White Belt Certification</h3>
+                    <p>Certified in process improvement methodologies and quality management principles</p>
+                    <span class="issuer">Council for Six Sigma Certification</span>
+                    <div class="certificate-date">Issued: 2025</div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+/* Certifications Display Section */
+.certifications-display-section {
+    background-color: var(--dark);
+    padding: 80px 0;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.certificate-item {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border-top: 3px solid var(--secondary);
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.certificate-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 200px;
+}
+
+.certificate-image {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+}
+
+.certificate-badge {
+    width: auto;
+    max-width: 120px;
+    height: auto;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+.certificate-content h3 {
+    color: var(--secondary);
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    font-weight: 600;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.certificate-content p {
+    color: var(--light);
+    opacity: 0.9;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.issuer {
+    display: inline-block;
+    background-color: rgba(100, 255, 218, 0.15);
+    color: var(--secondary);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border: 1px solid rgba(100, 255, 218, 0.3);
+}
+
+.certificate-date {
+    color: var(--light);
+    opacity: 0.7;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    font-weight: 500;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .certifications-display-section {
+        padding: 60px 0;
+    }
+    
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 0 15px;
+    }
+    
+    .certificate-item {
+        padding: 20px 15px;
+    }
+    
+    .image-wrapper {
+        padding: 12px;
+        min-height: 180px;
+    }
+    
+    .certificate-image {
+        max-height: 160px;
+    }
+    
+    .certificate-badge {
+        max-width: 100px;
+        max-height: 100px;
+    }
+    
+    .certificate-content h3 {
+        font-size: 1.1rem;
+        min-height: 50px;
+    }
+    
+    .certificate-content p {
+        font-size: 0.9rem;
+        min-height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .certifications-grid {
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .certificate-item {
+        padding: 18px 12px;
+    }
+    
+    .image-wrapper {
+        min-height: 160px;
+        padding: 10px;
+    }
+    
+    .certificate-image {
+        max-height: 140px;
+    }
+    
+    .certificate-badge {
+        max-width: 90px;
+        max-height: 90px;
+    }
+}
+</style>
 
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
@@ -994,5 +1230,6 @@
     </script>
 </body>
 </html>
+
 
 
